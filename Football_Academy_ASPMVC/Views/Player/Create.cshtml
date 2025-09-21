@@ -1,0 +1,84 @@
+﻿@model Player
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-header bg-success text-white text-center rounded-top-4">
+            <h2 class="mb-0">⚽ تسجيل لاعب جديد</h2>
+        </div>
+        <div class="card-body p-4">
+            <form asp-action="Create" method="post" class="row g-3">
+
+               
+                <div class="col-md-6">
+                    <label class="form-label fw-bold"> Player Name </label>
+                    <input name="FullName" class="form-control" placeholder="Full Name " />
+                </div>
+
+          
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">🎂 Age</label>
+                    <input name="Age" type="number" class="form-control" placeholder=" exampl 30" />
+                </div>
+
+             
+                <div class="col-md-6">
+                    <label class="form-label fw-bold"> 📞 Mobile number</label>
+                    <input name="PhoneNumber" class="form-control" placeholder="05xxxxxxxx" />
+                </div>
+
+              
+                <div class="col-md-6">
+                    <label class="form-label fw-bold"> 📧 e-mail</label>
+                    <input name="Email" type="email" class="form-control" placeholder="example@email.com" />
+                </div>
+
+                
+                <div class="col-md-6">
+                    <label asp-for="Position" class="form-label fw-bold">Position</label>
+                    <select asp-for="Position" class="form-select">
+                        <option selected disabled value="Position">Choose Position</option>
+                        <option value="Attacker">Attacker</option>
+                        <option value="Midfielder">Midfielder</option>
+                        <option value="Defender">Defender</option>
+                        <option value="Goalkeeper"> Goalkeeper</option>
+                    </select>
+                </div>
+
+                
+                <div class="col-md-6">
+                    <label asp-for="Team" class="form-label fw-bold">Teams</label>
+                    <select asp-for="Team" class="form-select">
+                        <option selected disabled value="Team">Choose the team</option>
+                        <option value="TeamU12">Team U12</option>
+                        <option value="TeamU15">Team U15</option>
+                        <option value="TeamU18">Team U18</option>
+                    </select>
+                </div>
+             
+
+                
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">Coach number</label>
+                    <input name="CoachId" class="form-control" placeholder="Enter the trainer's number" />
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">Coach name</label>
+                    <input name="Coach" class="form-control" placeholder="Enter the coach's name" />
+                </div>
+
+                
+                <div class="col-12 text-center mt-4">
+                    <button type="submit" class="btn btn-success px-5 py-2 fw-bold shadow-sm">
+                        💾 Save player
+                    </button>
+                    <a asp-action="Index" class="btn btn-secondary px-4 py-2 ms-2">⬅ Back to list</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Player>
+@{
+    ViewData["Title"] = "Players";
+}
+
+<div class="container my-5">
+
+    <!-- العنوان -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="fw-bold text-success">
+            Players List ⚽ 
+        </h1>
+        <a asp-action="Create" class="btn btn-success">
+            ➕Add New Player
+        </a>
+    </div>
+
+    <!-- شبكة بطاقات اللاعبين -->
+    <div class="row g-4">
+        @foreach (var player in Model)
+        {
+            <div class="col-md-4">
+                <div class="card shadow border-0 h-100">
+
+                    <!-- صورة افتراضية -->
+                    <img src="https://source.unsplash.com/400x250/?soccer,player" class="card-img-top" alt="Player">
+
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold text-dark">@player.FullName</h5>
+                        <p class="card-text text-muted">
+                            <strong>Age:</strong> @player.Age <br />
+                            <strong>Position:</strong> @player.Position <br />
+                            <strong>PhoneNumber:</strong> @player.PhoneNumber <br />
+                            <strong>Email:</strong> @player.Email <br />
+                            <strong>Team:</strong> @player.Team?.FullName <br />
+                            <strong>Coach:</strong> @player.Coach?.FullName
+                        </p>
+                    </div>
+
+                    <!-- الأكشنات -->
+                    <div class="card-footer bg-white d-flex justify-content-between">
+                        <a asp-action="Edit" asp-route-id="@player.Id" class="btn btn-sm btn-warning">
+                            ✏️ Edit
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@player.Id" class="btn btn-sm btn-danger">
+                            🗑️ Delete
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+
+    

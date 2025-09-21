@@ -1,0 +1,55 @@
+﻿@model Team
+@{
+    ViewData["Title"] = "Edit Team";
+}
+
+<h1 class="mb-4">Edit Team</h1>
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">@Model.FullName</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit" method="post">
+            <div class="mb-3">
+                <label class="form-label">Team Name:</label>
+                <input asp-for="FullName" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Team U12:</label>
+                <input asp-for="TeamU12" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Team U15:</label>
+                <input asp-for="TeamU15" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Team U18:</label>
+                <input asp-for="TeamU18" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Coach Id:</label>
+                <input asp-for="CoachId" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Coach Name:</label>
+                <input asp-for="Coach" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Players:</label>
+                <textarea asp-for="Players" class="form-control" rows="3"></textarea>
+            </div>
+
+            <div class="text-end">
+                <button type="submit" class="btn btn-success">Save Changes</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

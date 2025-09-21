@@ -1,0 +1,150 @@
+﻿@{
+    ViewData["Title"] = "Football Academy";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Football_Academy_ASPMVC</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Football_Academy_ASPMVC.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+    <style>
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(90deg, #00416A, #1E90FF);
+        }
+
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+            font-weight: bold;
+        }
+
+        /* Cards */
+        .custom-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 15px;
+        }
+
+            .custom-card:hover {
+                transform: translateY(-10px) scale(1.05);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            }
+
+        /* Footer */
+        footer {
+            background: #00416A;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== Navbar ===== -->
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">⚽ Football Academy</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Privacy Policy" asp-action="Index">Privacy Policy</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Login" asp-action="Index">Login</a></li>
+                        @* <li class="nav-item"><a class="nav-link" asp-controller="Player" asp-action="Index">Players</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Coach" asp-action="Index">Coaches</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="MedicalStaff" asp-action="Index">Medical Staff</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Team" asp-action="Index">Teams</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Match" asp-action="Index">Match</a></li> *@
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== Main Content ===== -->
+     @* <div class="container mt-5">
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold text-primary">Welcome to Football Academy ⚽</h1>
+            <p class="lead text-muted">Manage <strong>Players</strong>, <strong>Coaches</strong>, <strong>Teams</strong>, and <strong>Medical Staff</strong>.</p>
+        </div>
+        <br />
+        <br /> *@
+
+        @* <div class="row">
+            <!-- Players -->
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm text-center custom-card">
+                    <div class="card-body">
+                        <i class="bi bi-person-bounding-box text-primary" style="font-size: 3rem;"></i>
+                        <h5 class="card-title mt-3 text-black">Players</h5>
+                        <p class="card-text , text-black">View and manage all academy players.</p>
+                        <a asp-controller="Player" asp-action="Index" class="btn btn-primary">Go to Players</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coaches -->
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm text-center custom-card">
+                    <div class="card-body">
+                        <i class="bi bi-clipboard2-check text-success" style="font-size: 3rem;"></i>
+                        <h5 class="card-title mt-3 , text-black">Coaches</h5>
+                        <p class="card-text , text-black">Manage coaches and training staff.</p>
+                        <a asp-controller="Coach" asp-action="Index" class="btn btn-success">Go to Coaches</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Teams -->
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm text-center custom-card">
+                    <div class="card-body">
+                        <i class="bi bi-people-fill text-warning" style="font-size: 3rem;"></i>
+                        <h5 class="card-title mt-3 , text-black">Teams</h5>
+                        <p class="card-text , text-black">Organize and manage academy teams.</p>
+                        <a asp-controller="Team" asp-action="Index" class="btn btn-warning text-white">Go to Teams</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medical Staff -->
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm text-center custom-card">
+                    <div class="card-body">
+                        <i class="bi bi-hospital text-danger" style="font-size: 3rem;"></i>
+                        <h5 class="card-title mt-3 , text-black">Medical Staff</h5>
+                        <p class="card-text , text-black">Keep track of doctors and physiotherapists.</p>
+                        <a asp-controller="MedicalStaff" asp-action="Index" class="btn btn-danger">Go to Staff</a>
+                    </div>
+                </div>
+            </div>
+        </div> *@
+
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+   
+    <!-- ===== Footer ===== -->
+    <footer>
+       
+        <div class="container">
+            &copy; @DateTime.Now.Year - Football Academy ⚽ | Developed with ❤️ using ASP.NET Core & Bootstrap
+        </div>
+    </footer> 
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Coach>
+
+@{
+    ViewData["Title"] = "Coaches";
+}
+
+<div class="container mt-5">
+   
+    <div class="text-center mb-4">
+        <h1 class="fw-bold text-success"> Coaches List 👨 👨‍🏫⚽</h1>
+        <p class="text-muted">Easily manage and modify trainer data</p>
+    </div>
+
+   
+    <div class="text-end mb-3">
+        <a asp-action="Create" class="btn btn-success btn-lg shadow-sm">
+            ➕Add New Coach  
+        </a>
+    </div>
+
+   
+    <div class="card shadow-lg border-0 rounded-3">
+        <div class="card-body p-0">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-success text-center">
+                    <tr>
+                        <th>🆔</th>
+                        <th>👨‍🏫 Name</th>
+                        <th>🎂 Age</th>
+                        <th>📞 Phone</th>
+                        <th>📧 Email</th>
+                        <th>⚽ Position</th>
+                        <th>🏆 Team</th>
+                        <th>⚙️ Procedures</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var coach in Model)
+                    {
+                        <tr class="text-center">
+                            <td>@coach.Id</td>
+                            <td class="fw-bold">@coach.FullName</td>
+                            <td>@coach.Age</td>
+                            <td>@coach.PhoneNumber</td>
+                            <td>@coach.Email</td>
+                            <td>@coach.Position</td>
+                            <td>@coach.Teamleading</td>
+                            <td>
+                                <a asp-action="Edit" asp-route-Id="@coach.Id"
+                                   class="btn btn-warning btn-sm me-2">
+                                    ✏️ Edit
+                                </a>
+                                <a asp-action="Delete" asp-route-Id="@coach.Id"
+                                   class="btn btn-danger btn-sm">
+                                    🗑️ Delete
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+

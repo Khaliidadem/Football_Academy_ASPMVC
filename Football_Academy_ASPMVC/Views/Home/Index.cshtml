@@ -1,0 +1,283 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-primary">Welcome to Football Academy ⚽</h1>
+        <p class="lead text-muted">Manage <strong>Players</strong>, <strong>Coaches</strong>, <strong>Teams</strong>, and <strong>Medical Staff</strong>.</p>
+    </div>
+    <br />
+    <br />
+
+
+<div class="row">
+    
+    <div class="col-md-3 mb-4">
+        <div class="card shadow-sm text-center custom-card">
+            <div class="card-body">
+                <i class="bi bi-person-bounding-box text-primary" style="font-size: 3rem;"></i>
+                <h5 class="card-title mt-3 text-black">Players</h5>
+                <p class="card-text , text-black">View and manage all academy players.</p>
+                <a asp-controller="Player" asp-action="Index" class="btn btn-primary">Go to Players</a>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="col-md-3 mb-4">
+        <div class="card shadow-sm text-center custom-card">
+            <div class="card-body">
+                <i class="bi bi-clipboard2-check text-success" style="font-size: 3rem;"></i>
+                <h5 class="card-title mt-3 , text-black">Coaches</h5>
+                <p class="card-text , text-black">Manage coaches and training staff.</p>
+                <a asp-controller="Coach" asp-action="Index" class="btn btn-success">Go to Coaches</a>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="col-md-3 mb-4">
+        <div class="card shadow-sm text-center custom-card">
+            <div class="card-body">
+                <i class="bi bi-people-fill text-warning" style="font-size: 3rem;"></i>
+                <h5 class="card-title mt-3 , text-black">Teams</h5>
+                <p class="card-text , text-black">Organize and manage academy teams.</p>
+                <a asp-controller="Team" asp-action="Index" class="btn btn-warning text-white">Go to Teams</a>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="col-md-3 mb-4">
+        <div class="card shadow-sm text-center custom-card">
+            <div class="card-body">
+                <i class="bi bi-hospital text-danger" style="font-size: 3rem;"></i>
+                <h5 class="card-title mt-3 , text-black">Medical Staff</h5>
+                <p class="card-text , text-black">Keep track of doctors and physiotherapists.</p>
+                    <a asp-controller="MedicalStaff" asp-action="Index" class="btn btn-danger">Go to Staff</a>
+            </div>
+        </div>
+    </div>
+    
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm text-center custom-card">
+                <div class="card-body">
+                    <i class="bi bi-trophy text-warning" style="font-size: 3rem;"></i>
+                    <h5 class="card-title mt-3 text-black">Matches</h5>
+                    <p class="card-text text-black">View and manage upcoming and past matches.</p>
+                    <a asp-controller="Match" asp-action="Index" class="btn btn-warning">Go to Matches</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm text-center custom-card">
+                <div class="card-body">
+                    <i class="bi bi-currency-dollar text-warning" style="font-size: 3rem;"></i>
+                    <h5 class="card-title mt-3 text-black">Subscription</h5>
+                    <p class="card-text text-black">View and manage Players Subscription.</p>
+                    <a asp-controller="Subscription" asp-action="Index" class="btn btn-warning">Go to Subscriptions</a>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+    @{
+        ViewData["Title"] = "Football Carousel";
+    }
+
+    <style>
+        
+        .carousel-inner img {
+            height: 500px; 
+            object-fit: cover; 
+        }
+    </style>
+
+    <div class="container mt-4">
+        <div id="footballCarousel" class="carousel slide mb-5" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-inner rounded-4 shadow-lg">
+
+                
+                <div class="carousel-item active">
+                    <img src="https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                         class="d-block w-100" alt="Football Stadium">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>🏟️ Stadium</h3>
+                        <p>Where legends are made</p>
+                    </div>
+                </div>
+
+                
+                <div class="carousel-item">
+                    <img src="~/css/1077180.jpeg.webp" class="d-block w-100" alt="Football Match">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>⚽ Match Day</h3>
+                        <p>Pure passion on the field</p>
+                    </div>
+                </div>
+
+                
+                <div class="carousel-item">
+                    <img src="~/css/images 15.jpeg class="d-block w-100" alt="Football Training">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>💪 Training</h3>
+                        <p>Hard work creates champions</p>
+                    </div>
+                </div>
+
+                
+                <div class="carousel-item">
+                    <img src="~/css/images 11.jpeg" class="d-block w-100" alt="Football Goal">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>🥅 Goals</h3>
+                        <p>Moments that change history</p>
+                    </div>
+                </div>
+
+                
+                <div class="carousel-item">
+                    <img src="~/css/2100040.jpg" class="d-block w-100" alt="Football Fans">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>🎉 Fans</h3>
+                        <p>The heart of football</p>
+                    </div>
+                </div>
+
+                
+                <div class="carousel-item">
+                    <img src="~/css/cat49-10.jpg" class="d-block w-100" alt="Team Celebration">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>🏆 Celebration</h3>
+                        <p>Victory tastes sweet</p>
+                    </div>
+                </div>
+
+                
+                <div class="carousel-item">
+                    <img src="~/css/images 12.jpeg" class="d-block w-100" alt="Football Youth Training">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>👦 Future Stars</h3>
+                        <p>Youth training for tomorrow</p>
+                    </div>
+                </div>
+
+                
+                <div class="carousel-item">
+                    <img src="~/css/Football-Coach.jpg" class="d-block w-100" alt="Football Coach">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>📋 Coach Tactic</h3>
+                        <p>Strategy makes the difference</p>
+                    </div>
+                </div>
+
+            </div>
+
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#footballCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#footballCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+
+ 
+
+
+
+    
+    <div class="row text-center mb-5">
+        <div class="col-md-3">
+            <div class="card shadow border-0 p-3">
+                <h2 class="text-primary">120</h2>
+                <p class="text-muted">Players</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow border-0 p-3">
+                <h2 class="text-success">15</h2>
+                <p class="text-muted">Coaches</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow border-0 p-3">
+                <h2 class="text-warning">10</h2>
+                <p class="text-muted">Teams</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card shadow border-0 p-3">
+                <h2 class="text-danger">5</h2>
+                <p class="text-muted">Medical Staff</p>
+            </div>
+        </div>
+    </div>
+
+    
+    <style>
+        .player-square {
+            width: 100%;
+            height: 250px; 
+            object-fit: contain; 
+            background-color: #000; 
+            border-radius: 10px; 
+        }
+    </style>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-white mb-4">🏆 Top Players</h3>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 h-100">
+                <img src="~/css/images 17.jpeg" class="card-img-top player-square" alt="Player 1">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Ali Ahmed</h5>
+                    <p class="card-text">Striker - 25 Goals</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 h-100">
+                <img src="~/css/hd23.jpg" class="card-img-top player-square" alt="Player 2">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Omar Khalid</h5>
+                    <p class="card-text">Midfielder - 18 Assists</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-lg border-0 h-100">
+                <img src="~/css/Ronaldo-award.jpg" class="card-img-top player-square" alt="Player 3">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Fahad Saeed</h5>
+                    <p class="card-text">Goalkeeper - 10 Clean Sheets</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<style>
+    body {
+        background: linear-gradient(to right, #0d1b2a, #1b263b, #415a77);
+        color:black;
+    }
+
+    .card {
+        border-radius: 15px;
+    }
+
+       /*  .card img {
+            border-radius: 15px 15px 0 0;
+            height: 200px;
+            object-fit: cover;
+        } */
+</style>

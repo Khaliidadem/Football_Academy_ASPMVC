@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Team>
+@{
+    ViewData["Title"] = "Teams";
+}
+
+<h1 class="mb-4">Teams</h1>
+
+<div class="text-end mb-4">
+    <a asp-action="Create" class="btn btn-primary">Create New Team</a>
+</div>
+
+<div class="row">
+    @foreach (var team in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="card-title mb-0">@team.FullName</h5>
+                </div>
+                <div class="card-body">
+                    <p><strong>Team U12:</strong> @team.TeamU12</p>
+                    <p><strong>Team U15:</strong> @team.TeamU15</p>
+                    <p><strong>Team U18:</strong> @team.TeamU18</p>
+                    <p><strong>Coach:</strong> @team.Coach</p>
+                    <p><strong>Players:</strong> @team.Players.Count()</p>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    <a asp-action="Edit" asp-route-Id="@team.Id" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-action="Delete" asp-route-Id="@team.Id" class="btn btn-danger btn-sm">Delete</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@* </table>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>FullName</th>
+            <th>Coach</th>
+            <th>Players Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var team in Model)
+        {
+            <tr>
+                <td>@team.Id</td>
+                <td>@team.FullName</td>
+                <td>@team.Coach?.FullName</td>
+                <td>@team.Players?.Count()</td>
+            </tr>
+        }
+    </tbody>
+</table> *@

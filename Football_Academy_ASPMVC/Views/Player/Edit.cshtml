@@ -1,0 +1,70 @@
+﻿@model Player
+@{
+    ViewData["Title"] = "Edit Player";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded-3">
+        <div class="card-header bg-dark text-white text-center">
+            <h2>⚽ تعديل بيانات اللاعب</h2>
+        </div>
+        <div class="card-body bg-light">
+            <form asp-action="Edit" method="post">
+                <input type="hidden" asp-for="Id" />
+
+                <div class="mb-3">
+                    <label class="form-label">الاسم الكامل:</label>
+                    <input asp-for="FullName" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">العمر:</label>
+                    <input asp-for="Age" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">رقم الجوال:</label>
+                    <input asp-for="PhoneNumber" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">البريد الإلكتروني:</label>
+                    <input asp-for="Email" class="form-control" />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">المركز:</label>
+                    <select asp-for="Position" class="form-control">
+                        <option value="Attacker">مهاجم</option>
+                        <option value="Midfielder">وسط</option>
+                        <option value="Defender">مدافع</option>
+                        <option value="Goalkeeper">حارس مرمى</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">الفريق:</label>
+                    <select asp-for="Team" class="form-control">
+                        <option value="TeamU12">فريق U12</option>
+                        <option value="TeamU15">فريق U15</option>
+                        <option value="TeamU18">فريق U18</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">المدرب:</label>
+                    <input asp-for="Coach" class="form-control" />
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success btn-lg px-4">
+                        💾 حفظ التعديلات
+                    </button>
+                    <a asp-action="Index" class="btn btn-secondary btn-lg px-4">
+                        ↩ رجوع
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

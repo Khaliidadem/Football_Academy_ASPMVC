@@ -1,0 +1,60 @@
+﻿@model Coach
+@{
+    ViewData["Title"] = "Delete Coach";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded-3">
+        
+        <div class="card-header bg-danger text-white text-center">
+            <h2>🗑️ حذف مدرب</h2>
+            <p class="mb-0">⚠️ هل أنت متأكد أنك تريد حذف هذا المدرب؟</p>
+        </div>
+
+        
+        <div class="card-body bg-light">
+            <form asp-action="Delete" method="post">
+                <div class="mb-3">
+                    <label class="form-label">👨‍🏫 Coach name :</label>
+                    <input asp-for="FullName" class="form-control" readonly />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">🎂 Age:</label>
+                    <input asp-for="Age" class="form-control" readonly />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">📞  Mobile number:</label>
+                    <input asp-for="PhoneNumber" class="form-control" readonly />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">📧  e-mail:</label>
+                    <input asp-for="Email" class="form-control" readonly />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">⚽ Specialization/Position :</label>
+                    <input asp-for="Position" class="form-control" readonly />
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">🏆 The team he leads:</label>
+                    <input asp-for="Teamleading" class="form-control" readonly />
+                </div>
+
+                
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-danger btn-lg px-4 me-2">
+                        🗑️ Confirm deletion
+                    </button>
+                    <a asp-action="Index" class="btn btn-secondary btn-lg px-4">
+                        ↩ cancellation
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

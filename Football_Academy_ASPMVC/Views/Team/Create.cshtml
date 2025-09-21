@@ -1,0 +1,55 @@
+﻿@model Team
+@{
+    ViewData["Title"] = "Register Team";
+}
+
+<h1 class="mb-4">Register New Team</h1>
+
+<div class="card shadow-sm">
+    <div class="card-header bg-success text-white">
+        <h4 class="mb-0">Team Registration</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Create" method="post">
+            <div class="mb-3">
+                <label class="form-label">Team Name:</label>
+                <input asp-for="FullName" class="form-control" placeholder="Enter team name" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Team U12:</label>
+                <input asp-for="TeamU12" class="form-control" placeholder="Number of players in U12" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Team U15:</label>
+                <input asp-for="TeamU15" class="form-control" placeholder="Number of players in U15" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Team U18:</label>
+                <input asp-for="TeamU18" class="form-control" placeholder="Number of players in U18" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Coach Id:</label>
+                <input asp-for="CoachId" class="form-control" placeholder="Enter coach ID" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Coach Name:</label>
+                <input asp-for="Coach" class="form-control" placeholder="Enter coach name" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Players:</label>
+                <textarea asp-for="Players" class="form-control" rows="3" placeholder="Enter players' names separated by commas"></textarea>
+            </div>
+
+            <div class="text-end">
+                <button type="submit" class="btn btn-success">Save Team</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

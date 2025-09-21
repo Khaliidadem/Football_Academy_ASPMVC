@@ -1,0 +1,48 @@
+﻿@model Player
+@{
+    ViewData["Title"] = "Delete Player";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded-3">
+        <div class="card-header bg-success text-white text-center">
+            <h2>⚽ حذف لاعب</h2>
+            <p>هل أنت متأكد أنك تريد حذف هذا اللاعب من الأكاديمية؟</p>
+        </div>
+        <div class="card-body bg-light">
+            <dl class="row">
+                <dt class="col-sm-3">الاسم الكامل:</dt>
+                <dd class="col-sm-9">@Model.FullName</dd>
+
+                <dt class="col-sm-3">العمر:</dt>
+                <dd class="col-sm-9">@Model.Age</dd>
+
+                <dt class="col-sm-3">رقم الجوال:</dt>
+                <dd class="col-sm-9">@Model.PhoneNumber</dd>
+
+                <dt class="col-sm-3">البريد الإلكتروني:</dt>
+                <dd class="col-sm-9">@Model.Email</dd>
+
+                <dt class="col-sm-3">المركز:</dt>
+                <dd class="col-sm-9">@Model.Position</dd>
+
+                <dt class="col-sm-3">الفريق:</dt>
+                <dd class="col-sm-9">@Model.Team</dd>
+
+                <dt class="col-sm-3">المدرب:</dt>
+                <dd class="col-sm-9">@Model.Coach</dd>
+            </dl>
+        </div>
+        <div class="card-footer text-center">
+            <form asp-action="DeleteConfirmed" method="post">
+                <input type="hidden" asp-for="Id" />
+                <button type="submit" class="btn btn-danger btn-lg px-4">
+                    🗑 حذف نهائي
+                </button>
+                <a asp-action="Index" class="btn btn-secondary btn-lg px-4">
+                    ↩ رجوع
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
